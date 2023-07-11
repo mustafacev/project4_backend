@@ -30,6 +30,56 @@
             </span>
         </a>
     </div>
+    <div class="detail__realtors mb-5">
+        <h3 class="title is-3">Realtors</h3>
+        <form class="mb-5" action="{% url 'realestate_create' house.pk %}" method="post">
+            {% csrf_token %}
+            <div class="field has-addons">
+                <div class="control">
+                    <input
+                        class="input"
+                        type="text"
+                        name="title"
+                        placeholder="realtor agent name"
+                        required
+                    />
+                </div>
+                <div class="control">
+                    <input
+                    class="input"
+                    type="text"
+                    name="email"
+                    placeholder="email"
+                    required
+                    />
+                </div>
+
+
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Add Realtor" />
+                </div>
+            </div>
+        </form>
+           
+        {% for realestate in house.realestate.all %}
+        <div class="realtor">
+          <span>{{forloop.counter}}</span>
+          <span>{{realestate.title}}</span>
+          <span>{{realestate.phone}}</span>
+          <span>{{realestate.email}}</span>
+          <br>
+          <span>{{realestate.description}}</span>
+        </div>
+            {% empty %}
+        <article class="message">
+          <div class="message-header">
+            <p>No Realtors Available</p>
+          </div>
+        </article>
+    
+        {% endfor %}
+      </div>
+    <!--  above about section  -->
         <div class="detail__about">
             <h4 class="title is-4">About</h4>
             <p>{{house.description}}</p>

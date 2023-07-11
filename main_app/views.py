@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from .models import House
+from .models import House, Realestate
 from django.views.generic.edit import CreateView ,UpdateView ,DeleteView
 from django.views.generic import DetailView
+
 class Home(TemplateView):
     template_name = "home.html"
     
@@ -87,3 +88,13 @@ class HouseDelete(DeleteView):
     model = House
     template_name = "house_delete_confirmation.html"
     success_url = "/house/"
+
+
+class RealestateCreate(View):
+
+    def post(self, request, pk):
+        title = request.POST.get("title")
+        email = request.POST.get("email")
+        house = House.objects.get(pk=pk)
+        Realestate.objects.create(title=title,email=email, house=house)
+        return redirect('house_detail', pk=pk)
