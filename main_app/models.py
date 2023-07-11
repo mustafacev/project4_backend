@@ -24,3 +24,18 @@ class House (models.Model):
 
     class Meta:
         ordering = ['title']
+
+
+
+
+
+class Realestate(models.Model):
+
+    title = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    description = models.CharField(max_length=150)
+    house = models.ForeignKey(House, on_delete=models.CASCADE, related_name="realestate")
+
+    def __str__(self):
+        return self.title
