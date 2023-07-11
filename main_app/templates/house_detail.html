@@ -3,6 +3,7 @@
 <div class="detail__img">
     <img src="{{house.img}}" alt="{{house.title}}" />
 </div>
+
 <div class="detail__name">
     {% if house.favorite_house %}
     <div class="icon-text">
@@ -11,12 +12,14 @@
         </span>
         <span>Verified Favorite list </span>
     </div>
+    
     {% endif %}
     <h1 class="title">{{house.title}}</h1>
 </div>
 <div class="detail__container">
     <div class="buttons">
-        <a href="" class="button is-info">
+
+        <a href="{% url 'house_update' house.pk %}" class="button is-info"> Updates
             <span class="icon">
                 <i class="fas fa-edit"></i>
             </span>
@@ -27,10 +30,10 @@
             </span>
         </a>
     </div>
-    <div class="detail__about">
-        <h4 class="title is-4">About</h4>
-        <p>{{house.description}}</p>
+        <div class="detail__about">
+            <h4 class="title is-4">About</h4>
+            <p>{{house.description}}</p>
+        </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}

@@ -7,4 +7,5 @@ urlpatterns = [
     path('house/', views.HouseList.as_view(), name="house_list"),
     path('house/new/', views.HouseCreate.as_view(), name="house_create"),
     path('house/<int:pk>/', views.HouseDetail.as_view(), name="house_detail"),
+    path('house/<int:pk>/update',views.HouseUpdate.as_view(), name="house_update"),
 ]
