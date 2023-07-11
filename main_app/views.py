@@ -3,6 +3,8 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import House
+from django.views.generic.edit import CreateView
+
 class Home(TemplateView):
     template_name = "home.html"
     
@@ -60,3 +62,11 @@ class HouseList(TemplateView):
             # default header for not searching 
             context["header"] = "Trending Houses"
         return context
+    
+
+
+class HouseCreate(CreateView):
+    model = House
+    fields = ['title', 'img', 'address', 'favorite_house','realtor','city','state','zipcode','price','description','bedrooms','bathroom','sqft']
+    template_name = "house_create.html"
+    success_url = "/house/"
