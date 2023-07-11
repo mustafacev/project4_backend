@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import House
-from django.views.generic.edit import CreateView ,UpdateView
+from django.views.generic.edit import CreateView ,UpdateView ,DeleteView
 from django.views.generic import DetailView
 class Home(TemplateView):
     template_name = "home.html"
@@ -80,4 +80,10 @@ class HouseUpdate(UpdateView):
     model = House
     fields = ['title', 'img', 'address', 'favorite_house','realtor','city','state','zipcode','price','description','bedrooms','bathroom','sqft']
     template_name = "house_update.html"
+    success_url = "/house/"
+
+
+class HouseDelete(DeleteView):
+    model = House
+    template_name = "house_delete_confirmation.html"
     success_url = "/house/"
