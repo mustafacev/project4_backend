@@ -3,12 +3,12 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import House, Realestate
-from django.views.generic.edit import CreateView ,UpdateView ,DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
+
 
 class Home(TemplateView):
     template_name = "home.html"
-    
 
 
 class About(TemplateView):
@@ -28,7 +28,7 @@ class About(TemplateView):
 #         self.bedrooms = bedrooms
 #         self.bathroom = bathroom
 #         self.sqft = sqft
-       
+
 
 # house = [
 #     House("Rocky Homes","40544 Briarhill Lane","kingston Real estate","Ohio","OH","044503","$134,000","Lakefront property","https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg","2 bedrooms","1","70 sqft"),
@@ -60,15 +60,15 @@ class HouseList(TemplateView):
             context["header"] = f"Searching for {title}"
         else:
             context["house"] = House.objects.all()
-            # default header for not searching 
+            # default header for not searching
             context["header"] = "Trending Houses"
         return context
-    
 
 
 class HouseCreate(CreateView):
     model = House
-    fields = ['title', 'img', 'address', 'favorite_house','realtor','city','state','zipcode','price','description','bedrooms','bathroom','sqft']
+    fields = ['title', 'img', 'address', 'favorite_house', 'realtor', 'city',
+              'state', 'zipcode', 'price', 'description', 'bedrooms', 'bathroom', 'sqft']
     template_name = "house_create.html"
     success_url = "/house/"
 
@@ -77,9 +77,11 @@ class HouseDetail(DetailView):
     model = House
     template_name = "house_detail.html"
 
+
 class HouseUpdate(UpdateView):
     model = House
-    fields = ['title', 'img', 'address', 'favorite_house','realtor','city','state','zipcode','price','description','bedrooms','bathroom','sqft']
+    fields = ['title', 'img', 'address', 'favorite_house', 'realtor', 'city',
+              'state', 'zipcode', 'price', 'description', 'bedrooms', 'bathroom', 'sqft']
     template_name = "house_update.html"
     success_url = "/house/"
 
@@ -96,5 +98,5 @@ class RealestateCreate(View):
         title = request.POST.get("title")
         email = request.POST.get("email")
         house = House.objects.get(pk=pk)
-        Realestate.objects.create(title=title,email=email, house=house)
+        Realestate.objects.create(title=title, email=email, house=house)
         return redirect('house_detail', pk=pk)

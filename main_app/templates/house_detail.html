@@ -12,7 +12,7 @@
         </span>
         <span>Verified Favorite list </span>
     </div>
-    
+
     {% endif %}
     <h1 class="title">{{house.title}}</h1>
 </div>
@@ -36,22 +36,10 @@
             {% csrf_token %}
             <div class="field has-addons">
                 <div class="control">
-                    <input
-                        class="input"
-                        type="text"
-                        name="title"
-                        placeholder="realtor agent name"
-                        required
-                    />
+                    <input class="input" type="text" name="title" placeholder="realtor agent name" required />
                 </div>
                 <div class="control">
-                    <input
-                    class="input"
-                    type="text"
-                    name="email"
-                    placeholder="email"
-                    required
-                    />
+                    <input class="input" type="text" name="email" placeholder="email" required />
                 </div>
 
 
@@ -60,30 +48,30 @@
                 </div>
             </div>
         </form>
-           
+
         {% for realestate in house.realestate.all %}
         <div class="realtor">
-          <span>{{forloop.counter}}</span>
-          <span>{{realestate.title}}</span>
-          <span>{{realestate.phone}}</span>
-          <span>{{realestate.email}}</span>
-          <br>
-          <span>{{realestate.description}}</span>
+            <span>{{forloop.counter}}</span>
+            <span>{{realestate.title}}</span>
+            <span>{{realestate.phone}}</span>
+            <span>{{realestate.email}}</span>
+            <br>
+            <span>{{realestate.description}}</span>
         </div>
-            {% empty %}
+        {% empty %}
         <article class="message">
-          <div class="message-header">
-            <p>No Realtors Available</p>
-          </div>
+            <div class="message-header">
+                <p>No Realtors Available</p>
+            </div>
         </article>
-    
-        {% endfor %}
-      </div>
-    <!--  above about section  -->
-        <div class="detail__about">
-            <h4 class="title is-4">About</h4>
-            <p>{{house.description}}</p>
-        </div>
-    </div>
 
-    {% endblock %}
+        {% endfor %}
+    </div>
+    <!--  above about section  -->
+    <div class="detail__about">
+        <h4 class="title is-4">About</h4>
+        <p>{{house.description}}</p>
+    </div>
+</div>
+
+{% endblock %}
