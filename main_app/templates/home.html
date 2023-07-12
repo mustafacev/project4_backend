@@ -1,4 +1,55 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Real Estate Home</h1>
-{% endblock %}
+<!-- home.html -->
+{% extends 'base.html' %} {% block content %}
+<h1>Welcome to the Best Real Estate Portal</h1>
+
+<h2> Find your new home with us!! </h2>
+
+<h3>Please enter your requirements: </h3>
+
+<form method="GET" action="{% url 'home' %}" class="search-form">
+    <div class="form-row">
+        <div class="form-column">
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" name="bedrooms" id="bedrooms" value="{{ bedrooms }}">
+        </div>
+        <div class="form-column">
+            <label for="bathroom">Bathrooms:</label>
+            <input type="number" name="bathroom" id="bathroom" value="{{ bathroom }}">
+        </div>
+        <div class="form-column">
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" value="{{ city }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-column">
+            <label for="state">State:</label>
+            <input type="text" name="state" id="state" value="{{ state }}">
+        </div>
+        <div class="form-column">
+            <label for="min_price">Min Price:</label>
+            <input type="number" name="min_price" id="min_price" value="{{ min_price }}">
+        </div>
+        <div class="form-column">
+            <label for="max_price">Max Price:</label>
+            <input type="number" name="max_price" id="max_price" value="{{ max_price }}">
+        </div>
+    </div>
+    <button type="submit">Search</button>
+</form>
+{% if houses %}
+
+<ul>
+    {% for house in houses %}
+    <li>
+        <img src="{{ house.img }}" alt="{{ house.title }}" width="200">
+        <h3>{{ house.title }}</h3>
+        <p>Location: {{ house.city }}, {{ house.state }}</p>
+        <p>Bedrooms: {{ house.bedrooms }}</p>
+        <p>Price: ${{ house.price }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No houses found.</p>
+{% endif %} {% endblock %}
