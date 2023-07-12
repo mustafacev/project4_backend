@@ -1,0 +1,87 @@
+/* home_styles.css */
+
+h1,
+h2,
+h3 {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-column {
+    flex: 1;
+}
+
+button[type="submit"] {
+    align-self: flex-start;
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.house-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.house-item {
+    margin-bottom: 20px;
+}
+
+.house-item img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.house-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.house-item p {
+    margin: 5px 0;
+}
