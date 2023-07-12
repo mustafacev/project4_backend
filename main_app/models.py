@@ -27,9 +27,6 @@ class House (models.Model):
         ordering = ['title']
 
 
-
-
-
 class Realestate(models.Model):
 
     title = models.CharField(max_length=50)
@@ -37,6 +34,7 @@ class Realestate(models.Model):
     email = models.CharField(max_length=50)
     description = models.CharField(max_length=150)
     house = models.ForeignKey(House, on_delete=models.CASCADE, related_name="realestate")
+    img = models.CharField(max_length=250, default='https://www.nicepng.com/png/detail/89-898495_house-logo-png-home-address-logo-png.png')
 
     def __str__(self):
         return self.title
