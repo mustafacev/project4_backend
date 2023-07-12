@@ -1,53 +1,55 @@
+from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views import View
+from .forms import HouseSearchForm
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import House, Realestate
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 
 class Home(TemplateView):
     template_name = "home.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        bedrooms = self.request.GET.get('bedrooms')
+        bathroom = self.request.GET.get('bathroom')
+        city = self.request.GET.get('city')
+        state = self.request.GET.get('state')
+        min_price = self.request.GET.get('min_price')
+        max_price = self.request.GET.get('max_price')
+
+        houses = House.objects.all()
+
+        if bedrooms:
+            houses = houses.filter(bedrooms=bedrooms)
+        if bathroom:
+            houses = houses.filter(bathroom=bathroom)
+        if city:
+            houses = houses.filter(city__icontains=city) 
+        if state:
+            houses.filter(state__icontains=state)
+        if min_price:
+            houses = houses.filter(price__gte=min_price)
+        if max_price:
+            houses = houses.filter(price__lte=max_price)
+
+        context['bedrooms'] = bedrooms
+        context['bathroom'] = bathroom
+        context['city'] = city
+        context['state'] = state
+        context['min_price'] = min_price
+        context['max_price'] = max_price
+        context['houses'] = houses
+
+        return context
 
 class About(TemplateView):
     template_name = "about.html"
 
-# class House:
-#     def __init__(self, title, address, realtor ,city ,state ,zipcode ,price ,description ,image ,bedrooms,bathroom ,sqft):
-#         self.title = title
-#         self.address = address
-#         self.realtor = realtor
-#         self.city = city
-#         self.state = state
-#         self.zipcode = zipcode
-#         self.price = price
-#         self.description = description
-#         self.image = image
-#         self.bedrooms = bedrooms
-#         self.bathroom = bathroom
-#         self.sqft = sqft
-
-
-# house = [
-#     House("Rocky Homes","40544 Briarhill Lane","kingston Real estate","Ohio","OH","044503","$134,000","Lakefront property","https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg","2 bedrooms","1","70 sqft"),
-#     House("KESQL Homes","40544 Beverly Avenue","Nasq Real estate","Clington","NJ","044503","$341,000","Lakefront property","https://nelson-homes.com/media/images/Aries_prefab_homes_modular_homes.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("Lake Homes","40544 Bri st","Berlin Real estate","Ohio","OH","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/Mensa_house_plan_prefab_homes_mo.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("Lakese Homes","40544 hill st","Atlas Real estate","Ohio","OH","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/Preseus_prefab_homes_modular_hom.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("Nalsa Homes","40544 arhill st","Benja Real estate","Washington","NYC","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/Sylvan_prefab_homes_modular_home.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("ASla Homes","40544 Brhill st","Kirlse Real estate","Boston","Ma","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/Vermillion_prefab_homes_modular_.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("Derva Homes","40544 Briall st","Alss Real estate","Ohio","OH","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/McKinley_prefab_homes_modular_ho.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-#     House("Rcey Homes","40544 Rire st","kingston Real estate","Boston","MA","044503","$134,000","Lakefront property","https://nelson-homes.com/media/images/Bayfield_prefab_homes_modular_ho.2e16d0ba.fill-1920x1080.jpg","2 bedrooms","1","70 sqft"),
-# ]
-
-# class HouseList(TemplateView):
-#     template_name = "house_list.html"
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["house"] = House.objects.all() # Here we are using the model to query the database for us.
-#         return context
 class HouseList(TemplateView):
     template_name = "house_list.html"
 
@@ -100,3 +102,13 @@ class RealestateCreate(View):
         house = House.objects.get(pk=pk)
         Realestate.objects.create(title=title, email=email, house=house)
         return redirect('house_detail', pk=pk)
+    
+class RealtorListView(ListView):
+    model = Realestate
+    template_name = 'realtor_list.html'
+    context_object_name = 'realtors'
+
+class RealtorDetailView(DetailView):
+    model = Realestate
+    template_name = 'realtor_detail.html'
+    context_object_name = 'realtor'
