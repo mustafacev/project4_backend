@@ -55,7 +55,7 @@ class HouseList(TemplateView):
         context = super().get_context_data(**kwargs)
         title = self.request.GET.get("title")
         if title != None:
-            context["house"] = House.objects.filter(name__icontains=title)
+            context["house"] = House.objects.filter(title__icontains=title)
             # We add a header context that includes the search param
             context["header"] = f"Searching for {title}"
         else:
