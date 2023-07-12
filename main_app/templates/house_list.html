@@ -1,31 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 class="title">Hot Picks House Listing</h1>
+<h1 class="title">Hot Deals</h1>
 <h1 class="title pt-5">{{header}}</h1>
 <form class="mb-5" method="get">
-  <div class="field has-addons">
-    <div class="control">
-      <input class="input" type="text" name="title" placeholder="name" />
+    <div class="field has-addons">
+        <div class="control">
+            <input class="input" type="text" name="title" placeholder="title" />
+        </div>
+        <div class="control">
+            <input class="button is-success" type="submit" value="Search" />
+        </div>
     </div>
-    <div class="control">
-      <input class="button is-success" type="submit" value="Search" />
-    </div>
-  </div>
-  <a class="button is-dark" href="{% url 'house_create' %}">Add House List</a>
-  <a class="button is-dark" href="{% url 'house_list' %}">Clear Search</a>
+    <a class="button is-dark" href="{% url 'house_create' %}">Add House to Favorites</a>
+    <a class="button is-dark" href="{% url 'house_list' %}">Clear Search</a>
 </form>
 <div class="gallery">
-  {% for houses in house %}
-  <a href="{% url 'house_detail' houses.pk %}">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="{{houses.img}}" alt="{{houses.title}}" />
-        </figure>
-      </div>
-      <div class="card-header">
-        <p class="card-header-title">{{houses.title}}</p>
-        <span>{{houses.address}} | {{houses.price}}$
+    {% for houses in house %}
+    <a href="{% url 'house_detail' houses.pk %}">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-square">
+                    <img src="{{houses.img}}" alt="{{houses.title}}" />
+                </figure>
+            </div>
+            <div class="card-header">
+                <p class="card-header-title">{{houses.title}}</p>
+                <span>{{houses.address}} | {{houses.price}}$
       </div>
     </div>
   </a>
