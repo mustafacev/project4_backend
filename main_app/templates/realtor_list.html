@@ -1,0 +1,12 @@
+<!-- realtor_list.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h1>Our Realtors</h1>
+<ul>
+    {% for realtor in realtors %}
+    <li>
+        <a href="{% url 'realtor_detail' realtor.id %}">{{ realtor.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
