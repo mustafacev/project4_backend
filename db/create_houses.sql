@@ -1,30 +1,12 @@
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://nelson-homes.com/media/images/Vermillion_prefab_homes_modular_.2e16d0ba.fill-1920x1080.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://nelson-homes.com/media/images/McKinley_prefab_homes_modular_ho.2e16d0ba.fill-1920x1080.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
-INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft)
-  VALUES
-    ('Rocky Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','kingston Real estate','Ohio','OH','044503','$134,000','Lakefront property','2 bedrooms','1','70');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Baige Homes','https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg','40544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','John Doe','Boston','MA','044503','2340000','Amazing View','5','3','2020');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('John Doe','1234567890','john.doe@example.com','Best Real Estate Agent working in industry from last 6 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Sky Homes','https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','4044 Hill Ave','t','2021-05-07 18:57:42.517205-07','Sophie Ali','Boston','MA','044503','2340000','Nice View','5','3','2019');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('Sophie Ali','1234567890','sophie.e@example.com','Best Real Estate Agent working in industry from last 4 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Kayak Homes','https://images.pexels.com/photos/2886284/pexels-photo-2886284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','544 Briarhill Lane','t','2021-05-07 18:57:42.517205-07','John Doe','Allston','MA','044503','2340000','Amazing Lake  View','5','3','2021');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('Laure Ella','5234567890','laure@example.com','Best Real Estate Agent working in industry from last 9 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Novale Homes','https://images.pexels.com/photos/1449729/pexels-photo-1449729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','444 Summer st','t','2021-05-07 18:57:42.517205-07','Laure Ella','Cambridge','MA','044503','2340000','Great View','5','3','2023');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('Kelvin Omet','1234566890','kelvin.@example.com','Best Real Estate Agent working in industry from last 6 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Cloud Homes','https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','300  Washington  St','t','2021-05-07 18:57:42.517205-07','Kelvin Omet','Fenway park','MA','044503','2340000','Amazing View','5','3','2020');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('Mike Dow','1234567850','mike.dow@example.com','Best Real Estate Agent working in industry from last 5 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+INSERT INTO main_app_house(title, img, address, favorite_house, created_at,realtor,city,state,zipcode,price,description,bedrooms,bathroom,sqft) VALUES ('Lake Homes','https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','40544 Fase St','t','2021-05-07 18:57:42.517205-07','ALi Guclu','Quincy','MA','044503','2340000','Amazing View','5','3','2018');
+INSERT INTO main_app_realestate(title,phone,email,description,house_id,img) VALUES ('ALi Guclu','1234567840','ali.guclu@example.com','Best Real Estate Agent working in industry from last 8 Years',13,'https://images.pexels.com/photos/8469937/pexels-photo-8469937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');

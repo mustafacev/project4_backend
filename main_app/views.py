@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views import View
-from .forms import HouseSearchForm
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import House, Realestate
@@ -29,7 +28,7 @@ class Home(TemplateView):
         if bathroom:
             houses = houses.filter(bathroom=bathroom)
         if city:
-            houses = houses.filter(city__icontains=city) 
+            houses = houses.filter(city__icontains=city)
         if state:
             houses.filter(state__icontains=state)
         if min_price:
@@ -47,8 +46,10 @@ class Home(TemplateView):
 
         return context
 
+
 class About(TemplateView):
     template_name = "about.html"
+
 
 class HouseList(TemplateView):
     template_name = "house_list.html"
@@ -102,11 +103,13 @@ class RealestateCreate(View):
         house = House.objects.get(pk=pk)
         Realestate.objects.create(title=title, email=email, house=house)
         return redirect('house_detail', pk=pk)
-    
+
+
 class RealtorListView(ListView):
     model = Realestate
     template_name = 'realtor_list.html'
     context_object_name = 'realtors'
+
 
 class RealtorDetailView(DetailView):
     model = Realestate
