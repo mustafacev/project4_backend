@@ -1,5 +1,5 @@
 body {
-  background-color: #121212;
+  background-color: hsl(0, 0%, 4%);
   color: #ffffff;
   min-height: 100vh;
 }
@@ -75,6 +75,25 @@ img {
 
 .detail__container {
   margin-top: 500px;
+}
+
+.detail__about {
+  padding: 20px;
+  background-color: #151313;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.detail__about h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.detail__about p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #a19e9e;
 }
 
 .detail__realtors {

@@ -1,0 +1,26 @@
+/* realtor_list.css */
+
+h1 {
+    color: #e1dede;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #0056b3;
+}

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'styles/home_styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/about_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/realtor_list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/realtor_detail.css' %}">
     <script src="{% static 'scripts/main.js' %}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Real Estate - {% block title %}{% endblock %}</title>
@@ -41,8 +43,7 @@
         {% block content %}{% endblock %}
 
     </div>
-    </div>
-    </div>
+
 </body>
 
 </html>

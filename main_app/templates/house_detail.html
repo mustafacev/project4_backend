@@ -29,6 +29,20 @@
             </span>
         </a>
     </div>
+    <!--  above about section  -->
+    <div class="detail__about">
+        <h3 class="title is-4">About</h3>
+        <p><strong>City:</strong> {{ house.city }}</p>
+        <p><strong>State:</strong> {{ house.state }}</p>
+        <p><strong>Address:</strong> {{ house.address }}</p>
+        <p><strong>Bedrooms:</strong> {{ house.bedrooms }} <strong> Bathrooms:</strong> {{ house.bathroom }}</p>
+        <p><strong>Square Feet:</strong> {{ house.sqft }}</p>
+        <p><strong>Price:</strong> ${{ house.price }}</p>
+        <p><strong>Description:</strong> {{ house.description }}</p>
+
+    </div>
+    <br> </br>
+
     <div class="detail__realtors mb-5">
         <h3 class="title is-3">Realtors</h3>
         <form class="mb-5" action="{% url 'realestate_create' house.pk %}" method="post">
@@ -49,13 +63,15 @@
         </form>
 
         {% for realestate in house.realestate.all %}
-        <div class="realtor">
-            <span>{{forloop.counter}}</span>
-            <span>{{realestate.title}}</span>
-            <span>{{realestate.phone}}</span>
-            <span>{{realestate.email}}</span>
-            <br>
-            <span>{{realestate.description}}</span>
+        <div class="realtor-details">
+            <div class="avatar">
+                <img src="{{ realestate.img }}" alt="{{ realestate.title }}">
+            </div>
+            <div class="details">
+                <h1>{{ realestate.title }}</h1>
+                <p>Phone: {{ realestate.phone }}</p>
+                <p>Email: {{ realestate.email }}</p>
+            </div>
         </div>
         {% empty %}
         <article class="message">
@@ -66,11 +82,7 @@
 
         {% endfor %}
     </div>
-    <!--  above about section  -->
-    <div class="detail__about">
-        <h4 class="title is-4">About</h4>
-        <p>{{house.description}}</p>
-    </div>
+
 </div>
 
 {% endblock %}

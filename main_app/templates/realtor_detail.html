@@ -2,10 +2,14 @@
 
 {% extends 'base.html' %} {% block content %}
 <div class="realtor-details">
-    <h1>{{ realtor.title }}</h1>
-    <p>{{ realtor.description }}</p>
-    <p>Phone: {{ realtor.phone }}</p>
-    <p>Email: {{ realtor.email }}</p>
-    <img src="{{ realtor.image.url }}" alt="{{ realtor.title }}" width="200">
+    <div class="avatar">
+        <img src="{{ realtor.img }}" alt="{{ realtor.title }}">
+    </div>
+    <div class="details">
+        <h1>{{ realtor.title }}</h1>
+        <p>{{ realtor.description }}</p>
+        <p>Phone: {{ realtor.phone }}</p>
+        <p>Email: {{ realtor.email }}</p>
+    </div>
 </div>
 {% endblock %}

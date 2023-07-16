@@ -45,8 +45,9 @@
         <img src="{{ house.img }}" alt="{{ house.title }}" width="200">
         <h3>{{ house.title }}</h3>
         <p>Location: {{ house.city }}, {{ house.state }}</p>
-        <p>Bedrooms: {{ house.bedrooms }}</p>
+        <p>Bedrooms: {{ house.bedrooms }} Bathrooms: {{ house.bathroom }}</p>
         <p>Price: ${{ house.price }}</p>
+        <p>Square Feet: {{house.sqft}} </p>
     </li>
     {% endfor %}
 </ul>
